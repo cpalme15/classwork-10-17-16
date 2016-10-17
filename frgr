@@ -1,0 +1,111 @@
+/* Collin Palmer
+ * Date:10/17/16
+ * loops
+ * COSC 111
+ */
+	 import java.util.*;
+public class Classwork {
+
+	public static void main(String[] args) {
+
+	/*for loop same as while loop but used more often when 
+	 * you know how many times you will reuse the loop
+	 * count-controlled loop
+	 * for(initial value; condition; change)
+	 * {
+	 * print(n)
+	 * }
+	 * 
+	 */
+	Random r= new Random();
+	double A=0.0, P=100000,interest=0.05,numtim=12;
+	int d1=0,years=30,m=0;
+	int d2=0;
+	int point=0;
+	int sum=0;
+	char lttr=' ';
+	int n=0;
+	for(m=1;m<=10;m++){
+	for(n=1;n<=m;n++)
+	{
+	System.out.println("* ");
+	}}
+	System.out.println();
+	
+	
+	//mortgage calculator
+	// 100,000 4% interest 360 payments A = P (1 + r/n) ^ nt
+	// A=math.pow(P*(1+r/n)nt)
+	
+	for(n=1;n<=years;n++)
+	{
+		A=P*Math.pow((1+interest/numtim),numtim*n );
+		System.out.println(n+"\t"+A);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//craps game
+	d1=r.nextInt(6)+1;
+	d2=r.nextInt(6)+1;
+	for(n=1;n<=3;n++){
+		sum=d1+d2;
+		System.out.println("You rolled the first time "+sum);
+		if(sum==7 ||sum==11)
+			System.out.println("You win");
+		else if(sum==2||sum==3||sum==12)
+			System.out.println("You lose");
+		else{
+			point=sum;
+			System.out.println("The point is "+point);
+			d1=r.nextInt(6)+1;
+			d2=r.nextInt(6)+1;
+			sum=d1+d2;
+			System.out.println("You rolled "+sum);
+			while(sum!=point&&sum!=7){
+				d1=r.nextInt(6)+1;
+				d2=r.nextInt(6)+1;
+				sum=d1+d2;
+				System.out.println("You rolled "+sum);
+			}
+			if(sum==7)
+				System.out.println("Game is over");
+			else
+				System.out.println("You are a winner");
+		}}
+	System.out.println("==========================");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	for(n=1;n<=10;n++){
+		System.out.print(n+" ,");
+		}
+	for(n=10;n>=1;n--)
+		System.out.print(n);
+	System.out.println("----------");
+	for(lttr='A';lttr<='Z';lttr++)
+		System.out.println(lttr);
+	/*comeout roll
+	 * 7,11 win
+	 * 2,3,12 lose
+	 * 4,5,6,8,9,10 point
+	 * second roll either roll point to win or 7 to 
+	 * lose otherwise keep rolling
+	 */
+	
+	}
+	
+}
